@@ -23,7 +23,7 @@ flowchart LR
 | | |
 | --- | --- |
 | **Hardware** | Repurposed laptop — Intel Core i7 (4C/8T), 16 GB RAM, NVMe + 2 × 1 TB HDD |
-| **OS** | Ubuntu Server 22.04 LTS |
+| **OS** | Ubuntu Server 24.04 LTS (upgraded in place from 22.04) |
 | **Workloads** | Docker Engine + Compose, ~60 active stacks, 60+ retired ones kept for reference ([full list](services.md)) |
 | **Exposure** | Pangolin reverse proxy on a VPS, WireGuard tunnel (Newt), wildcard domain with TLS |
 | **Remote admin** | Key-only SSH tunnelled through the VPS — no SSH exposed to the internet |

@@ -19,12 +19,12 @@ What I am working on and what comes next. Updated as things move.
 ## 💭 Later / ideas
 
 - [ ] Storage upgrade: replace USB HDDs with a proper multi-disk setup (mirror or ZFS)
-- [ ] Ubuntu 24.04 LTS upgrade
 - [ ] Publish more of my homelab tooling as standalone open-source projects
 
 ## ✅ Done recently
 
 - [x] Kalenda v0.1.x with CI, E2E tests and multi-image releases
+- [x] In-place upgrade from Ubuntu 22.04 to 24.04 LTS, without issues
 - [x] Private Syncthing relay replacing a k3s test cluster
 - [x] Custom Prometheus exporter for APT updates
 - [x] Kernel upgrade safety net (GRUB fallback + initramfs backups)

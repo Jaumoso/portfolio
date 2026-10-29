@@ -12,7 +12,7 @@ The homelab runs on a **repurposed laptop**. It is quiet, sips power, and its ba
 | GPU | Intel UHD 620 + NVIDIA MX150 (NVIDIA container runtime enabled) |
 | System disk | 250 GB NVMe SSD |
 | Data disks | 2 × 1 TB external HDD (USB) |
-| OS | Ubuntu Server 22.04 LTS |
+| OS | Ubuntu Server 24.04 LTS (in-place upgrade from 22.04, no issues) |
 | Network | Wi-Fi (5 GHz) — a USB gigabit adapter is ready as fallback |
 
 !!! tip "Constraints are part of the fun"

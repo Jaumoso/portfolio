@@ -24,6 +24,7 @@ timeline
     section 2026 · H2
         Sep–Oct : Dawarich tooling (CLI + local editor)
                 : Kalenda v0.1.x releases with CI/CD and E2E tests
+                : Ubuntu 22.04 → 24.04 LTS upgrade
                 : This portfolio
 ```
 
@@ -45,3 +46,4 @@ kept in [`unused/`](https://github.com/Jaumoso/homelab/tree/main/unused), a nice
 - **April** — Custom **APT metrics exporter** for Prometheus on both servers. Hardened GRUB/initramfs against bad kernel upgrades. Started **[Kalenda](projects/kalenda.md)**.
 - **May** — Replaced a resource-hungry k3s test cluster on a small VPS with a private **Syncthing relay**. Drew the full infrastructure diagram.
 - **September–October** — Built a CLI and local web editor for Dawarich location data. Kalenda reached v0.1.10 with a full release pipeline. Published this site.
+- **2026** — Upgraded the server in place from Ubuntu 22.04 to **24.04 LTS** without issues.
