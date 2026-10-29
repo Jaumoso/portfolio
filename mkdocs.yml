@@ -1,0 +1,98 @@
+site_name: Jaume Civera · Portfolio
+site_description: Homelab, infrastructure and side projects by Jaume Civera (Developer & DevOps)
+site_author: Jaume Civera
+site_url: https://jaumoso.github.io/portfolio/
+repo_name: Jaumoso/portfolio
+repo_url: https://github.com/Jaumoso/portfolio
+edit_uri: edit/main/docs/
+copyright: © Jaume Civera · Built with MkDocs Material, deployed by GitHub Actions
+
+theme:
+  name: material
+  language: en
+  icon:
+    logo: material/server-network
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Homelab:
+      - homelab/index.md
+      - Architecture & Network: homelab/architecture.md
+      - Hardware & Storage: homelab/hardware-storage.md
+      - Services: homelab/services.md
+      - Backups & Disaster Recovery: homelab/backups.md
+      - Monitoring & Alerting: homelab/monitoring.md
+      - Security: homelab/security.md
+      - Use Cases: homelab/use-cases.md
+      - Lessons Learned: homelab/lessons-learned.md
+  - Projects:
+      - projects/index.md
+      - Kalenda: projects/kalenda.md
+      - docker-picard: projects/docker-picard.md
+  - Progress:
+      - Timeline: timeline.md
+      - Roadmap: roadmap.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Jaumoso
+    - icon: fontawesome/solid/globe
+      link: https://jaumoso.ovh
+
+extra_css:
+  - stylesheets/extra.css

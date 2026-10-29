@@ -1,0 +1,73 @@
+name: Build & deploy
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "0 6 * * 1" # every Monday, after the weekly homelab backup push
+  repository_dispatch:
+    types: [homelab-updated]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Regenerate services catalogue from Jaumoso/homelab
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/generate_services.py
+
+      - name: Check for sensitive data
+        env:
+          SENSITIVE_PATTERNS: ${{ secrets.SENSITIVE_PATTERNS }}
+        run: python scripts/check_sensitive.py
+
+      - name: Commit regenerated files
+        if: github.event_name != 'pull_request'
+        run: |
+          if [ -n "$(git status --porcelain docs/)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add docs/
+            git commit -m "chore: sync services from homelab"
+            git push
+          else
+            echo "No changes"
+          fi
+
+      - name: Build site
+        run: mkdocs build --strict
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

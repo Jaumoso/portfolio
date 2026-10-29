@@ -1,0 +1,388 @@
+# Metadata for every stack in https://github.com/Jaumoso/homelab
+#
+# Keys must match the folder name in `selfhosted/` (active) or `unused/` (retired).
+# The list of stacks itself is NOT maintained here: scripts/generate_services.py
+# reads it from the homelab repository and merges it with this metadata.
+# A stack without an entry is still published, under "Uncategorised".
+#
+# Fields:
+#   name        Display name
+#   category    One of the keys in `categories`
+#   description What the software is
+#   use         What I use it for (optional)
+#   url         Upstream project (optional)
+#   own         true if I wrote it (optional)
+#   on_demand   true if it is only started when needed (optional)
+
+categories:
+  networking: { title: "Networking & Access", icon: "🌐" }
+  infrastructure: { title: "Docker & Infrastructure", icon: "🛠️" }
+  monitoring: { title: "Monitoring & Alerting", icon: "📊" }
+  backups: { title: "Backups & Sync", icon: "💾" }
+  photos: { title: "Photos", icon: "📸" }
+  media: { title: "Movies & TV", icon: "🎬" }
+  music: { title: "Music", icon: "🎵" }
+  documents: { title: "Documents & Files", icon: "📄" }
+  productivity: { title: "Notes & Productivity", icon: "📝" }
+  life: { title: "Life Tracking", icon: "🧭" }
+  home: { title: "Home & Kitchen", icon: "🏠" }
+  tools: { title: "Dev & Web Tools", icon: "🧰" }
+  dashboards: { title: "Dashboards", icon: "🖥️" }
+  own: { title: "My Own Projects", icon: "🚀" }
+
+services:
+  # --- Networking & access -------------------------------------------------
+  newt:
+    name: Newt
+    category: networking
+    description: Tunnel client for the Pangolin reverse proxy (WireGuard).
+    use: Exposes selected services through the VPS without opening any port on my home router.
+    url: https://github.com/fosrl/newt
+  socket-proxy:
+    name: Docker Socket Proxy
+    category: networking
+    description: Read-only, filtered proxy in front of the Docker API.
+    use: Monitoring and dashboard containers query Docker through it instead of mounting the raw socket.
+    url: https://github.com/linuxserver/docker-socket-proxy
+  searxng:
+    name: SearXNG
+    category: networking
+    description: Privacy-respecting metasearch engine.
+    use: Default search engine on my devices.
+    url: https://github.com/searxng/searxng
+
+  # --- Docker & infrastructure ---------------------------------------------
+  dockge:
+    name: Dockge
+    category: infrastructure
+    description: Web UI to manage docker-compose stacks.
+    use: Day-to-day editing, starting and stopping of stacks.
+    url: https://github.com/louislam/dockge
+  dockhand:
+    name: Dockhand
+    category: infrastructure
+    description: Docker management UI.
+    use: Container overview and update checks.
+    url: https://github.com/Finsys/dockhand
+  cronmaster:
+    name: Cronmaster
+    category: infrastructure
+    description: Web UI to manage cron jobs and scripts.
+    use: Schedules maintenance scripts (compose backup to Git, cloud sync, network watchdog).
+    url: https://github.com/fccview/cronmaster
+  termix:
+    name: Termix
+    category: infrastructure
+    description: Web-based SSH terminal and server manager.
+    use: Emergency shell access from the browser.
+    url: https://github.com/LukeGus/Termix
+
+  # --- Monitoring -----------------------------------------------------------
+  grafana:
+    name: Grafana + Loki + Promtail
+    category: monitoring
+    description: Dashboards and centralised log aggregation.
+    use: Single place for host metrics, container logs and disk health.
+    url: https://github.com/grafana/grafana
+  prometheus:
+    name: Prometheus + exporters
+    category: monitoring
+    description: Metrics database with node-exporter and smartctl-exporter.
+    use: Scrapes CPU, RAM, network, disk SMART data and a custom APT-updates exporter.
+    url: https://github.com/prometheus/prometheus
+  beszel:
+    name: Beszel
+    category: monitoring
+    description: Lightweight server and container monitoring with alerts.
+    use: Quick health view of the homelab and the VPS from one panel.
+    url: https://github.com/henrygd/beszel
+  scrutiny:
+    name: Scrutiny
+    category: monitoring
+    description: Hard drive S.M.A.R.T. monitoring.
+    use: Early warning for the HDDs that hold all my data.
+    url: https://github.com/AnalogJ/scrutiny
+  ntfy:
+    name: ntfy
+    category: monitoring
+    description: Self-hosted push notifications.
+    use: Alerts from scripts, backups and monitoring land on my phone.
+    url: https://github.com/binwiederhier/ntfy
+  changedetection:
+    name: changedetection.io
+    category: monitoring
+    description: Website change detection and alerts.
+    use: Watches prices, release pages and docs for changes.
+    url: https://github.com/dgtlmoon/changedetection.io
+
+  # --- Backups & sync -------------------------------------------------------
+  backrest:
+    name: Backrest
+    category: backups
+    description: Web UI and scheduler for Restic backups.
+    use: Encrypted, deduplicated offsite backups to OVH Object Storage.
+    url: https://github.com/garethgeorge/backrest
+  syncthing:
+    name: Syncthing
+    category: backups
+    description: Continuous peer-to-peer file synchronisation.
+    use: Keeps phone camera, documents and personal folders in sync with my PCs and the server.
+    url: https://github.com/syncthing/syncthing
+
+  # --- Photos ---------------------------------------------------------------
+  immich:
+    name: Immich
+    category: photos
+    description: Self-hosted Google Photos alternative with on-device ML.
+    use: Main photo library — face recognition, smart search, mobile app. My replacement for Google Photos.
+    url: https://github.com/immich-app/immich
+  immich-kiosk:
+    name: Immich Kiosk
+    category: photos
+    description: Slideshow front-end for Immich.
+    use: Digital photo frame mode.
+    url: https://github.com/damongolding/immich-kiosk
+  immich-public-proxy:
+    name: Immich Public Proxy
+    category: photos
+    description: Share Immich albums publicly without exposing Immich itself.
+    use: Sharing albums with family and friends safely.
+    url: https://github.com/alangrainger/immich-public-proxy
+  immich-selfie-timelapse:
+    name: Immich Selfie Timelapse
+    category: photos
+    description: Generates face-aligned timelapses from Immich photos.
+    url: https://github.com/arnaudcayrol/immich-selfie-timelapse
+  photo-watcher:
+    name: photo-watcher
+    category: photos
+    own: true
+    description: Python service that watches several photo sources and files each picture into a dated archive.
+    use: Sorts phone photos into the YYYY/MM archive that Immich reads as an external library.
+    url: https://github.com/Jaumoso/photo-watcher
+
+  # --- Movies & TV ----------------------------------------------------------
+  jellyfin:
+    name: Jellyfin
+    category: media
+    description: Free media server for movies and TV.
+    use: Streaming to TV, phone and family members.
+    url: https://github.com/jellyfin/jellyfin
+  seerr:
+    name: Seerr
+    category: media
+    description: Media request and discovery front-end.
+    use: Friends and family request content, which is then automated by the *arr stack.
+    url: https://github.com/seerr-team/seerr
+  radarr:
+    name: Radarr
+    category: media
+    description: Movie collection manager.
+    url: https://github.com/Radarr/Radarr
+  sonarr:
+    name: Sonarr
+    category: media
+    description: TV series collection manager.
+    url: https://github.com/Sonarr/Sonarr
+  prowlarr:
+    name: Prowlarr + FlareSolverr
+    category: media
+    description: Indexer manager for the *arr stack.
+    url: https://github.com/Prowlarr/Prowlarr
+  qbittorrent:
+    name: qBittorrent
+    category: media
+    description: BitTorrent client with web UI.
+    url: https://github.com/qbittorrent/qBittorrent
+  dispatcharr:
+    name: Dispatcharr
+    category: media
+    description: IPTV stream and EPG management.
+    url: https://github.com/Dispatcharr/Dispatcharr
+  metube:
+    name: MeTube
+    category: media
+    description: Web UI for yt-dlp.
+    use: Saving videos and audio for offline use.
+    url: https://github.com/alexta69/metube
+
+  # --- Music ----------------------------------------------------------------
+  navidrome:
+    name: Navidrome
+    category: music
+    on_demand: true
+    description: Music streaming server (Subsonic compatible).
+    use: Streams my own music library to phone and desktop.
+    url: https://github.com/navidrome/navidrome
+  picard:
+    name: docker-picard
+    category: music
+    own: true
+    description: MusicBrainz Picard packaged in Docker with a noVNC web interface.
+    use: Tag the music that lives on the server directly from the browser.
+    url: https://github.com/Jaumoso/docker-picard
+  slskd:
+    name: slskd
+    category: music
+    description: Modern web client for the Soulseek network.
+    url: https://github.com/slskd/slskd
+  soulsync:
+    name: SoulSync
+    category: music
+    description: Syncs playlists from streaming services into the local library.
+    url: https://github.com/Nezreka/SoulSync
+
+  # --- Documents & files ----------------------------------------------------
+  paperless:
+    name: Paperless-ngx
+    category: documents
+    description: Document management with OCR (with Tika and Gotenberg).
+    use: Scanned paperwork, invoices and contracts — searchable and tagged.
+    url: https://github.com/paperless-ngx/paperless-ngx
+  stirling:
+    name: Stirling-PDF
+    category: documents
+    description: Local PDF toolbox (merge, split, OCR, convert…).
+    url: https://github.com/Stirling-Tools/Stirling-PDF
+  filebrowser:
+    name: FileBrowser Quantum + OnlyOffice
+    category: documents
+    description: Web file manager with in-browser office document editing.
+    use: Access to the data disks from anywhere.
+    url: https://github.com/gtsteffaniak/filebrowser
+  snapotter:
+    name: SnapOtter
+    category: documents
+    description: Self-hosted file-processing toolbox (convert, compress, OCR, transcribe).
+    url: https://github.com/snapotter-hq/SnapOtter
+  bichon:
+    name: Bichon
+    category: documents
+    description: Email archiver with full-text search.
+    use: Long-term archive of my mailboxes.
+    url: https://github.com/rustmailer/bichon
+
+  # --- Notes & productivity -------------------------------------------------
+  memos:
+    name: Memos
+    category: productivity
+    on_demand: true
+    description: Lightweight note-taking.
+    url: https://github.com/usememos/memos
+  blinko:
+    name: Blinko
+    category: productivity
+    description: AI-powered quick notes.
+    url: https://github.com/blinkospace/blinko
+  journiv:
+    name: Journiv
+    category: productivity
+    description: Private journaling app.
+    url: https://github.com/swalabtech/journiv-app
+  radicale:
+    name: Radicale
+    category: productivity
+    description: CalDAV / CardDAV server.
+    use: Calendars and contacts synced across devices without Google.
+    url: https://github.com/Kozea/Radicale
+  sure:
+    name: Sure
+    category: productivity
+    description: Personal finance and budgeting app.
+    use: Tracking expenses and net worth.
+    url: https://github.com/we-promise/sure
+
+  # --- Life tracking --------------------------------------------------------
+  dawarich:
+    name: Dawarich
+    category: life
+    description: Self-hosted location history (Google Timeline alternative).
+    use: Private location history. I wrote a small CLI and a local web editor around its API to fix points and import GPX tracks.
+    url: https://github.com/Freika/dawarich
+  airtrail:
+    name: AirTrail
+    category: life
+    description: Personal flight history tracker.
+    url: https://github.com/johanohly/AirTrail
+  trek:
+    name: TREK
+    category: life
+    description: Self-hosted trip planner.
+    use: Planning trips (itineraries, to-dos).
+  yamtrack:
+    name: Yamtrack
+    category: life
+    description: Media tracker for movies, shows, anime, games and books.
+    url: https://github.com/FuzzyGrim/Yamtrack
+  floppy:
+    name: Floppy
+    category: life
+    description: All-in-one media tracker (Trakt alternative).
+    url: https://github.com/dannyvfilms/floppy
+  healthlog:
+    name: HealthLog
+    category: life
+    description: Personal health metrics log.
+    url: https://github.com/mbombeck/healthlog
+
+  # --- Home -----------------------------------------------------------------
+  tandoor:
+    name: Tandoor Recipes
+    category: home
+    description: Recipe manager and meal planner.
+    url: https://github.com/TandoorRecipes/recipes
+  kitchenowl:
+    name: KitchenOwl
+    category: home
+    description: Shared grocery list and recipes.
+    url: https://github.com/TomBursch/kitchenowl
+  lubelogger:
+    name: LubeLogger
+    category: home
+    description: Vehicle maintenance and fuel tracker.
+    url: https://github.com/hargata/lubelog
+
+  # --- Dev & web tools ------------------------------------------------------
+  it-tools:
+    name: IT-Tools
+    category: tools
+    description: Collection of handy developer utilities.
+    url: https://github.com/CorentinTh/it-tools
+  cyberchef:
+    name: CyberChef
+    category: tools
+    description: The "cyber Swiss army knife" for data encoding and analysis.
+    url: https://github.com/gchq/CyberChef
+  littlelink:
+    name: LittleLink
+    category: tools
+    description: Self-hosted link-in-bio page.
+    url: https://github.com/techno-tim/littlelink-server
+
+  # --- Dashboards -----------------------------------------------------------
+  homarr:
+    name: Homarr
+    category: dashboards
+    description: Customisable homelab dashboard.
+    use: Start page with links and widgets for every service.
+    url: https://github.com/homarr-labs/homarr
+  glance:
+    name: Glance
+    category: dashboards
+    description: Minimal feed dashboard (RSS, releases, weather, markets).
+    url: https://github.com/glanceapp/glance
+
+  # --- My own projects ------------------------------------------------------
+  kalenda:
+    name: Kalenda
+    category: own
+    own: true
+    description: Self-hosted wall-calendar designer with PDF/PNG export.
+    use: Designing personalised photo wall calendars.
+    url: https://github.com/Jaumoso/kalenda
+  photodiff:
+    name: photodiff
+    category: own
+    own: true
+    description: Simple front-end to compare two photos and spot differences.
+    url: https://github.com/Jaumoso/photodiff
