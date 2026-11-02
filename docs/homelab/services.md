@@ -6,14 +6,14 @@ Everything below runs as Docker Compose stacks on the homelab. The list is gener
 
 <div class="grid cards" markdown>
 
--   :material-docker:{ .lg } **58** active stacks
--   :material-archive-outline:{ .lg } **62** tried & retired
+-   :material-docker:{ .lg } **56** active stacks
+-   :material-archive-outline:{ .lg } **64** tried & retired
 -   :material-rocket-launch:{ .lg } **4** built by me
 -   :material-power-sleep:{ .lg } **2** started on demand
 
 </div>
 
-_Last synchronised: 2026-10-29_
+_Last synchronised: 2026-11-02_
 
 ## 🌐 Networking & Access
 
@@ -28,7 +28,6 @@ _Last synchronised: 2026-10-29_
 | Service | What it is | What I use it for |
 | ------- | ---------- | ----------------- |
 | **[Cronmaster](https://github.com/fccview/cronmaster)** | Web UI to manage cron jobs and scripts. | Schedules maintenance scripts (compose backup to Git, cloud sync, network watchdog). |
-| **[Dockge](https://github.com/louislam/dockge)** | Web UI to manage docker-compose stacks. | Day-to-day editing, starting and stopping of stacks. |
 | **[Dockhand](https://github.com/Finsys/dockhand)** | Docker management UI. | Container overview and update checks. |
 | **[Termix](https://github.com/LukeGus/Termix)** | Web-based SSH terminal and server manager. | Emergency shell access from the browser. |
 
@@ -96,7 +95,6 @@ _Last synchronised: 2026-10-29_
 
 | Service | What it is | What I use it for |
 | ------- | ---------- | ----------------- |
-| **[Blinko](https://github.com/blinkospace/blinko)** | AI-powered quick notes. | — |
 | **[Journiv](https://github.com/swalabtech/journiv-app)** | Private journaling app. | — |
 | **[Memos](https://github.com/usememos/memos)**<br><small>:material-power-sleep: on demand</small> | Lightweight note-taking. | — |
 | **[Radicale](https://github.com/Kozea/Radicale)** | CalDAV / CardDAV server. | Calendars and contacts synced across devices without Google. |
@@ -147,4 +145,4 @@ _Last synchronised: 2026-10-29_
 
 Stacks I have run at some point and stopped using. Their compose files are kept in `unused/` so they can be brought back in minutes.
 
-`actualbudget`, `adventurelog`, `anchor`, `arcane`, `authentik`, `bazarr`, `bytestash`, `chromium`, `cloudcommander`, `cobalt`, `composr`, `dash`, `digikam`, `dockerproxy`, `dozzle`, `fileflows`, `firefly3`, `foldergram`, `glances`, `gluetun`, `hemmelig`, `homelab-dashboard`, `homepage`, `karakeep`, `kitchenowl`, `komodo`, `lidarr`, `linkwarden`, `mealie`, `mediatracker`, `minecraft`, `n8n`, `netalertx`, `nextcloud`, `obsidian`, `olivetin`, `ollama`, `open_archiver`, `openbooks`, `owncloud`, `owntracks`, `pairdrop`, `photoprism`, `pixelfed`, `portainer`, `reactive-resume`, `reitti`, `ryot`, `safeline`, `scratch-map`, `sftpgo`, `slaanesh`, `spliit`, `spotdl`, `statistics-for-strava`, `swingmusic`, `umami`, `uptime-kuma`, `watcharr`, `watchtower`, `wud`, `your_spotify`
+`actualbudget`, `adventurelog`, `anchor`, `arcane`, `authentik`, `bazarr`, `blinko`, `bytestash`, `chromium`, `cloudcommander`, `cobalt`, `composr`, `dash`, `digikam`, `dockerproxy`, `dockge`, `dozzle`, `fileflows`, `firefly3`, `foldergram`, `glances`, `gluetun`, `hemmelig`, `homelab-dashboard`, `homepage`, `karakeep`, `kitchenowl`, `komodo`, `lidarr`, `linkwarden`, `mealie`, `mediatracker`, `minecraft`, `n8n`, `netalertx`, `nextcloud`, `obsidian`, `olivetin`, `ollama`, `open_archiver`, `openbooks`, `owncloud`, `owntracks`, `pairdrop`, `photoprism`, `pixelfed`, `portainer`, `reactive-resume`, `reitti`, `ryot`, `safeline`, `scratch-map`, `sftpgo`, `slaanesh`, `spliit`, `spotdl`, `statistics-for-strava`, `swingmusic`, `umami`, `uptime-kuma`, `watcharr`, `watchtower`, `wud`, `your_spotify`
