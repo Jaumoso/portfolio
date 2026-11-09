@@ -6,14 +6,14 @@ Everything below runs as Docker Compose stacks on the homelab. The list is gener
 
 <div class="grid cards" markdown>
 
--   :material-docker:{ .lg } **56** active stacks
--   :material-archive-outline:{ .lg } **64** tried & retired
+-   :material-docker:{ .lg } **50** active stacks
+-   :material-archive-outline:{ .lg } **69** tried & retired
 -   :material-rocket-launch:{ .lg } **4** built by me
 -   :material-power-sleep:{ .lg } **2** started on demand
 
 </div>
 
-_Last synchronised: 2026-11-02_
+_Last synchronised: 2026-11-09_
 
 ## 🌐 Networking & Access
 
@@ -21,7 +21,6 @@ _Last synchronised: 2026-11-02_
 | ------- | ---------- | ----------------- |
 | **[Docker Socket Proxy](https://github.com/linuxserver/docker-socket-proxy)** | Read-only, filtered proxy in front of the Docker API. | Monitoring and dashboard containers query Docker through it instead of mounting the raw socket. |
 | **[Newt](https://github.com/fosrl/newt)** | Tunnel client for the Pangolin reverse proxy (WireGuard). | Exposes selected services through the VPS without opening any port on my home router. |
-| **[SearXNG](https://github.com/searxng/searxng)** | Privacy-respecting metasearch engine. | Default search engine on my devices. |
 
 ## 🛠️ Docker & Infrastructure
 
@@ -40,7 +39,6 @@ _Last synchronised: 2026-11-02_
 | **[Grafana + Loki + Promtail](https://github.com/grafana/grafana)** | Dashboards and centralised log aggregation. | Single place for host metrics, container logs and disk health. |
 | **[ntfy](https://github.com/binwiederhier/ntfy)** | Self-hosted push notifications. | Alerts from scripts, backups and monitoring land on my phone. |
 | **[Prometheus + exporters](https://github.com/prometheus/prometheus)** | Metrics database with node-exporter and smartctl-exporter. | Scrapes CPU, RAM, network, disk SMART data and a custom APT-updates exporter. |
-| **[Scrutiny](https://github.com/AnalogJ/scrutiny)** | Hard drive S.M.A.R.T. monitoring. | Early warning for the HDDs that hold all my data. |
 
 ## 💾 Backups & Sync
 
@@ -88,7 +86,6 @@ _Last synchronised: 2026-11-02_
 | **[Bichon](https://github.com/rustmailer/bichon)** | Email archiver with full-text search. | Long-term archive of my mailboxes. |
 | **[FileBrowser Quantum + OnlyOffice](https://github.com/gtsteffaniak/filebrowser)** | Web file manager with in-browser office document editing. | Access to the data disks from anywhere. |
 | **[Paperless-ngx](https://github.com/paperless-ngx/paperless-ngx)** | Document management with OCR (with Tika and Gotenberg). | Scanned paperwork, invoices and contracts — searchable and tagged. |
-| **[SnapOtter](https://github.com/snapotter-hq/SnapOtter)** | Self-hosted file-processing toolbox (convert, compress, OCR, transcribe). | — |
 | **[Stirling-PDF](https://github.com/Stirling-Tools/Stirling-PDF)** | Local PDF toolbox (merge, split, OCR, convert…). | — |
 
 ## 📝 Notes & Productivity
@@ -97,7 +94,6 @@ _Last synchronised: 2026-11-02_
 | ------- | ---------- | ----------------- |
 | **[Journiv](https://github.com/swalabtech/journiv-app)** | Private journaling app. | — |
 | **[Memos](https://github.com/usememos/memos)**<br><small>:material-power-sleep: on demand</small> | Lightweight note-taking. | — |
-| **[Radicale](https://github.com/Kozea/Radicale)** | CalDAV / CardDAV server. | Calendars and contacts synced across devices without Google. |
 | **[Sure](https://github.com/we-promise/sure)** | Personal finance and budgeting app. | Tracking expenses and net worth. |
 
 ## 🧭 Life Tracking
@@ -115,9 +111,7 @@ _Last synchronised: 2026-11-02_
 
 | Service | What it is | What I use it for |
 | ------- | ---------- | ----------------- |
-| **[KitchenOwl](https://github.com/TomBursch/kitchenowl)** | Shared grocery list and recipes. | — |
 | **[LubeLogger](https://github.com/hargata/lubelog)** | Vehicle maintenance and fuel tracker. | — |
-| **[Tandoor Recipes](https://github.com/TandoorRecipes/recipes)** | Recipe manager and meal planner. | — |
 
 ## 🧰 Dev & Web Tools
 
@@ -145,4 +139,4 @@ _Last synchronised: 2026-11-02_
 
 Stacks I have run at some point and stopped using. Their compose files are kept in `unused/` so they can be brought back in minutes.
 
-`actualbudget`, `adventurelog`, `anchor`, `arcane`, `authentik`, `bazarr`, `blinko`, `bytestash`, `chromium`, `cloudcommander`, `cobalt`, `composr`, `dash`, `digikam`, `dockerproxy`, `dockge`, `dozzle`, `fileflows`, `firefly3`, `foldergram`, `glances`, `gluetun`, `hemmelig`, `homelab-dashboard`, `homepage`, `karakeep`, `kitchenowl`, `komodo`, `lidarr`, `linkwarden`, `mealie`, `mediatracker`, `minecraft`, `n8n`, `netalertx`, `nextcloud`, `obsidian`, `olivetin`, `ollama`, `open_archiver`, `openbooks`, `owncloud`, `owntracks`, `pairdrop`, `photoprism`, `pixelfed`, `portainer`, `reactive-resume`, `reitti`, `ryot`, `safeline`, `scratch-map`, `sftpgo`, `slaanesh`, `spliit`, `spotdl`, `statistics-for-strava`, `swingmusic`, `umami`, `uptime-kuma`, `watcharr`, `watchtower`, `wud`, `your_spotify`
+`actualbudget`, `adventurelog`, `anchor`, `arcane`, `authentik`, `bazarr`, `blinko`, `bytestash`, `chromium`, `cloudcommander`, `cobalt`, `composr`, `dash`, `digikam`, `dockerproxy`, `dockge`, `dozzle`, `fileflows`, `firefly3`, `foldergram`, `glances`, `gluetun`, `hemmelig`, `homelab-dashboard`, `homepage`, `karakeep`, `kitchenowl`, `komodo`, `lidarr`, `linkwarden`, `mealie`, `mediatracker`, `minecraft`, `n8n`, `netalertx`, `nextcloud`, `obsidian`, `olivetin`, `ollama`, `open_archiver`, `openbooks`, `owncloud`, `owntracks`, `pairdrop`, `photoprism`, `pixelfed`, `portainer`, `radicale`, `reactive-resume`, `reitti`, `ryot`, `safeline`, `scratch-map`, `scrutiny`, `searxng`, `sftpgo`, `slaanesh`, `snapotter`, `spliit`, `spotdl`, `statistics-for-strava`, `swingmusic`, `tandoor`, `umami`, `uptime-kuma`, `watcharr`, `watchtower`, `wud`, `your_spotify`
