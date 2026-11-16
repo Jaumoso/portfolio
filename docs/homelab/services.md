@@ -6,14 +6,14 @@ Everything below runs as Docker Compose stacks on the homelab. The list is gener
 
 <div class="grid cards" markdown>
 
--   :material-docker:{ .lg } **50** active stacks
+-   :material-docker:{ .lg } **52** active stacks
 -   :material-archive-outline:{ .lg } **69** tried & retired
 -   :material-rocket-launch:{ .lg } **4** built by me
 -   :material-power-sleep:{ .lg } **2** started on demand
 
 </div>
 
-_Last synchronised: 2026-11-09_
+_Last synchronised: 2026-11-16_
 
 ## 🌐 Networking & Access
 
@@ -134,6 +134,13 @@ _Last synchronised: 2026-11-09_
 | ------- | ---------- | ----------------- |
 | **[Kalenda](https://github.com/Jaumoso/kalenda)**<br><small>:material-star: mine</small> | Self-hosted wall-calendar designer with PDF/PNG export. | Designing personalised photo wall calendars. |
 | **[photodiff](https://github.com/Jaumoso/photodiff)**<br><small>:material-star: mine</small> | Simple front-end to compare two photos and spot differences. | — |
+
+## ❔ Uncategorised
+
+| Service | What it is | What I use it for |
+| ------- | ---------- | ----------------- |
+| **ech0** | _Not documented yet._ | — |
+| **kept** | _Not documented yet._ | — |
 
 ## 🗄️ Tried & retired
 
