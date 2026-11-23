@@ -6,14 +6,14 @@ Everything below runs as Docker Compose stacks on the homelab. The list is gener
 
 <div class="grid cards" markdown>
 
--   :material-docker:{ .lg } **52** active stacks
--   :material-archive-outline:{ .lg } **69** tried & retired
+-   :material-docker:{ .lg } **49** active stacks
+-   :material-archive-outline:{ .lg } **72** tried & retired
 -   :material-rocket-launch:{ .lg } **4** built by me
 -   :material-power-sleep:{ .lg } **2** started on demand
 
 </div>
 
-_Last synchronised: 2026-11-16_
+_Last synchronised: 2026-11-23_
 
 ## 🌐 Networking & Access
 
@@ -92,7 +92,6 @@ _Last synchronised: 2026-11-16_
 
 | Service | What it is | What I use it for |
 | ------- | ---------- | ----------------- |
-| **[Journiv](https://github.com/swalabtech/journiv-app)** | Private journaling app. | — |
 | **[Memos](https://github.com/usememos/memos)**<br><small>:material-power-sleep: on demand</small> | Lightweight note-taking. | — |
 | **[Sure](https://github.com/we-promise/sure)** | Personal finance and budgeting app. | Tracking expenses and net worth. |
 
@@ -125,7 +124,6 @@ _Last synchronised: 2026-11-16_
 
 | Service | What it is | What I use it for |
 | ------- | ---------- | ----------------- |
-| **[Glance](https://github.com/glanceapp/glance)** | Minimal feed dashboard (RSS, releases, weather, markets). | — |
 | **[Homarr](https://github.com/homarr-labs/homarr)** | Customisable homelab dashboard. | Start page with links and widgets for every service. |
 
 ## 🚀 My Own Projects
@@ -139,11 +137,10 @@ _Last synchronised: 2026-11-16_
 
 | Service | What it is | What I use it for |
 | ------- | ---------- | ----------------- |
-| **ech0** | _Not documented yet._ | — |
 | **kept** | _Not documented yet._ | — |
 
 ## 🗄️ Tried & retired
 
 Stacks I have run at some point and stopped using. Their compose files are kept in `unused/` so they can be brought back in minutes.
 
-`actualbudget`, `adventurelog`, `anchor`, `arcane`, `authentik`, `bazarr`, `blinko`, `bytestash`, `chromium`, `cloudcommander`, `cobalt`, `composr`, `dash`, `digikam`, `dockerproxy`, `dockge`, `dozzle`, `fileflows`, `firefly3`, `foldergram`, `glances`, `gluetun`, `hemmelig`, `homelab-dashboard`, `homepage`, `karakeep`, `kitchenowl`, `komodo`, `lidarr`, `linkwarden`, `mealie`, `mediatracker`, `minecraft`, `n8n`, `netalertx`, `nextcloud`, `obsidian`, `olivetin`, `ollama`, `open_archiver`, `openbooks`, `owncloud`, `owntracks`, `pairdrop`, `photoprism`, `pixelfed`, `portainer`, `radicale`, `reactive-resume`, `reitti`, `ryot`, `safeline`, `scratch-map`, `scrutiny`, `searxng`, `sftpgo`, `slaanesh`, `snapotter`, `spliit`, `spotdl`, `statistics-for-strava`, `swingmusic`, `tandoor`, `umami`, `uptime-kuma`, `watcharr`, `watchtower`, `wud`, `your_spotify`
+`actualbudget`, `adventurelog`, `anchor`, `arcane`, `authentik`, `bazarr`, `blinko`, `bytestash`, `chromium`, `cloudcommander`, `cobalt`, `composr`, `dash`, `digikam`, `dockerproxy`, `dockge`, `dozzle`, `ech0`, `fileflows`, `firefly3`, `foldergram`, `glance`, `glances`, `gluetun`, `hemmelig`, `homelab-dashboard`, `homepage`, `journiv`, `karakeep`, `kitchenowl`, `komodo`, `lidarr`, `linkwarden`, `mealie`, `mediatracker`, `minecraft`, `n8n`, `netalertx`, `nextcloud`, `obsidian`, `olivetin`, `ollama`, `open_archiver`, `openbooks`, `owncloud`, `owntracks`, `pairdrop`, `photoprism`, `pixelfed`, `portainer`, `radicale`, `reactive-resume`, `reitti`, `ryot`, `safeline`, `scratch-map`, `scrutiny`, `searxng`, `sftpgo`, `slaanesh`, `snapotter`, `spliit`, `spotdl`, `statistics-for-strava`, `swingmusic`, `tandoor`, `umami`, `uptime-kuma`, `watcharr`, `watchtower`, `wud`, `your_spotify`
